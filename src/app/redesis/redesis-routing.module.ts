@@ -6,7 +6,6 @@ import { RedesisNewSaleComponent } from './redesis-sales/redesis-new-sale/redesi
 import { RedesisEditSaleComponent } from './redesis-sales/redesis-edit-sale/redesis-edit-sale.component';
 import { RedesisComponent } from './redesis.component';
 import { HomeComponent } from '../home/home.component';
-import { RedesisDashboardComponent } from './redesis-dashboard/redesis-dashboard.component';
 
 /*
 const routes: Routes = [
@@ -29,19 +28,19 @@ const routes: Routes = [
 
 const routes: Routes = [
   {
-    path:'Redesis/Compras', component:HomeComponent,
+    path:'Redesis', component:HomeComponent,
     children:[
-      { path: '', component: RedesisDashboardComponent },
-      {path: 'ComprasRedesisNuevaCompra', component: RedesisNewPurchaseComponent},
-      {path: 'RedesisEditarCompra', component: RedesisEditPurchaseComponent},
+      { path: '', component: HomeComponent, },
+      {path: 'NuevaCompra', component: RedesisNewPurchaseComponent},
+      {path: 'EditarCompra', component: RedesisEditPurchaseComponent},
     ]
   },
   {
-    path:'RedesisVentas', component:HomeComponent,
+    path:'Redesis', component:HomeComponent,
     children:[
-      { path: '', component: RedesisDashboardComponent },
-      {path: 'RedesisNuevaVenta', component: RedesisNewSaleComponent},
-      {path: 'RedesisEditarVenta', component: RedesisEditSaleComponent}
+      { path: '', component: HomeComponent },
+      {path: 'NuevaVenta', component: RedesisNewSaleComponent},
+      {path: 'EditarVenta', component: RedesisEditSaleComponent}
     ]
   },
     

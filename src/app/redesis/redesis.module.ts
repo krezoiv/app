@@ -7,8 +7,6 @@ import { RedesisNewSaleComponent } from './redesis-sales/redesis-new-sale/redesi
 import { RedesisEditPurchaseComponent } from './redesis-purchases/redesis-edit-purchase/redesis-edit-purchase.component';
 import { RedesisEditSaleComponent } from './redesis-sales/redesis-edit-sale/redesis-edit-sale.component';
 import { RedesisComponent } from './redesis.component';
-import { RedesisDashboardComponent } from './redesis-dashboard/redesis-dashboard.component';
-
 
 @NgModule({
   declarations: [
@@ -17,7 +15,7 @@ import { RedesisDashboardComponent } from './redesis-dashboard/redesis-dashboard
   RedesisEditPurchaseComponent,
   RedesisEditSaleComponent,
   RedesisComponent,
-  RedesisDashboardComponent,
+
  
   ],
   exports:[
