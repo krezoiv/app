@@ -1,53 +1,45 @@
+// Importar los módulos necesarios de Angular
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+// Importar los componentes relacionados con las compras y ventas de Redesis
 import { RedesisNewPurchaseComponent } from './redesis-purchases/redesis-new-purchase/redesis-new-purchase.component';
 import { RedesisEditPurchaseComponent } from './redesis-purchases/redesis-edit-purchase/redesis-edit-purchase.component';
 import { RedesisNewSaleComponent } from './redesis-sales/redesis-new-sale/redesis-new-sale.component';
 import { RedesisEditSaleComponent } from './redesis-sales/redesis-edit-sale/redesis-edit-sale.component';
-import { RedesisComponent } from './redesis.component';
+
+// Importar otros componentes y guardias necesarios
 import { HomeComponent } from '../home/home.component';
+import { AuthGuard } from '../guards/auth.guard';
 
-/*
+// Definir las rutas para la funcionalidad de Redesis
 const routes: Routes = [
   {
-    path: 'Compras',
-    children:[
-      {path: 'RedesisNuevaCompra', component: RedesisNewPurchaseComponent},
-      {path: 'RedesisEditarCompra', component: RedesisEditPurchaseComponent},
+    path: 'Redesis', // Ruta principal para Redesis
+    component: HomeComponent, // Componente principal para Redesis
+    canActivate: [AuthGuard], // Guardia de autenticación para proteger las rutas
+    children: [
+      // Rutas secundarias para compras de Redesis
+      { path: '', component: HomeComponent }, // Ruta por defecto
+      { path: 'NuevaCompra', component: RedesisNewPurchaseComponent }, // Ruta para crear una nueva compra
+      { path: 'EditarCompra', component: RedesisEditPurchaseComponent }, // Ruta para editar una compra existente
     ],
   },
   {
-    path: 'Ventas',
-    children:[
-      {path: 'RedesisNuevaVenta', component: RedesisNewSaleComponent},
-      {path: 'RedesisEditarVenta', component: RedesisEditSaleComponent}
+    path: 'Redesis', // Ruta principal para Redesis (se repite)
+    component: HomeComponent, // Componente principal para Redesis (se repite)
+    canActivate: [AuthGuard], // Guardia de autenticación para proteger las rutas (se repite)
+    children: [
+      // Rutas secundarias para ventas de Redesis
+      { path: '', component: HomeComponent }, // Ruta por defecto (se repite)
+      { path: 'NuevaVenta', component: RedesisNewSaleComponent }, // Ruta para crear una nueva venta
+      { path: 'EditarVenta', component: RedesisEditSaleComponent }, // Ruta para editar una venta existente
     ],
   },
-];
-*/
-
-const routes: Routes = [
-  {
-    path:'Redesis', component:HomeComponent,
-    children:[
-      { path: '', component: HomeComponent, },
-      {path: 'NuevaCompra', component: RedesisNewPurchaseComponent},
-      {path: 'EditarCompra', component: RedesisEditPurchaseComponent},
-    ]
-  },
-  {
-    path:'Redesis', component:HomeComponent,
-    children:[
-      { path: '', component: HomeComponent },
-      {path: 'NuevaVenta', component: RedesisNewSaleComponent},
-      {path: 'EditarVenta', component: RedesisEditSaleComponent}
-    ]
-  },
-    
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)], // Configurar las rutas secundarias para el módulo Redesis
+  exports: [RouterModule], // Exportar el módulo de enrutamiento para su uso en la aplicación
 })
 export class RedesisRoutingModule { }
