@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderAdministrationComponent } from './header-administration/header-administration.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -10,15 +12,19 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderAdministrationComponent,
+   
   ],
   exports:[
     SidebarComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderAdministrationComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatToolbarModule
   ]
 })
 export class SharedModule { }

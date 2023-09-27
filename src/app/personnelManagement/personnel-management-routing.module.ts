@@ -8,6 +8,7 @@ import { PersonnelManagementComponent } from './personnel-management.component';
 // Importar otros componentes y guardias necesarios
 import { AuthGuard } from '../guards/auth.guard';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
+import { ListEmployeesComponent } from './employees/list-employees/list-employees.component';
 
 // Definir las rutas para la funcionalidad de Empleados
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
     children:[
       // Rutas secundarias para compras de Redesis
       {path:'', component: PersonnelManagementComponent}, // Ruta por defecto
-      {path:'NuevoEmpleado', component: NewEmployeeComponent} // Ruta para crear una nuevo empleado
+      {path:'NuevoEmpleado', component: NewEmployeeComponent}, // Ruta para crear una nuevo empleado
+      {path:'ListaDeEmpleados', component: ListEmployeesComponent}, // Ruta para crear una nuevo empleado
     ]
   }
 ];

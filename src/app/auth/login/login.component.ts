@@ -14,7 +14,7 @@ export class LoginComponent {
   public formSubmitted = false;
 
   public loginForm = this.fb.group({
-    usuario: ['', Validators.required],
+    userName: ['', Validators.required],
     password: ['', Validators.required],
   });
 

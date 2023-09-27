@@ -1,1 +1,97 @@
-<p>new-employee works!</p>
+<form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <input matInput placeholder="Código" formControlName="codigo" />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Primer Nombre"
+      formControlName="primerNombre"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Segundo Nombre"
+      formControlName="segundoNombre"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Primer Apellido"
+      formControlName="primerApellido"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Segundo Apellido"
+      formControlName="segundoApellido"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      placeholder="Fecha de Alta"
+      formControlName="fechaAlta"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Tipo de Empleado</mat-label>
+    <mat-select formControlName="idTipoEmpleado">
+      <mat-option *ngFor="let tipo of tiposEmpleado" [value]="tipo">{{
+        tipo
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Status</mat-label>
+    <mat-select formControlName="idStatus">
+      <mat-option *ngFor="let status of statuses" [value]="status">{{
+        status
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cargo</mat-label>
+    <mat-select formControlName="idCargo">
+      <mat-option *ngFor="let cargo of cargos" [value]="cargo">{{
+        cargo
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Sede</mat-label>
+    <mat-select formControlName="idSede">
+      <mat-option *ngFor="let sede of sedes" [value]="sede">{{
+        sede
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Municipio</mat-label>
+    <mat-select formControlName="idMunicipio">
+      <mat-option *ngFor="let municipio of municipios" [value]="municipio">{{
+        municipio
+      }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      placeholder="Referencia de Dirección"
+      formControlName="referenciaDireccion"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cuenta BAC" formControlName="cuentaBAC" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Cuenta BAM" formControlName="cuentaBAM" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Guardar</button>
+</form>

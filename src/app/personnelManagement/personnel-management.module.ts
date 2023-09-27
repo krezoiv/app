@@ -6,13 +6,22 @@ import { PersonnelManagementComponent } from './personnel-management.component';
 import { NewEmployeeComponent } from './employees/new-employee/new-employee.component';
 import { NewUserComponent } from './users/new-user/new-user.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ListEmployeesComponent } from './employees/list-employees/list-employees.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
   declarations: [
     PersonnelManagementComponent,
     NewEmployeeComponent,
-    NewUserComponent
+    NewUserComponent,
+    ListEmployeesComponent
   ],
   exports:[
     PersonnelManagementComponent,
@@ -22,7 +31,14 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     PersonnelManagementRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatToolbarModule
   ]
 })
 export class PersonnelManagementModule { }
